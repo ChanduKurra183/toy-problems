@@ -5,10 +5,29 @@ class LRU_Cache:
         lru = []
 
     def put(self, key):
-        pass
+        if (len(self.lru) < self.size):
+            if key in self.lru:
+                self.lru.remove(key)
+                self.lru.append(key)
+                self.cache[key] = str(key)
+            else:
+                self.lru.append(key)
+                self.cache[key] = str(key)
+        else:
+            x = self.lru.pop(0)
+            self.lru.append(key)
+            del self.cache[x]
+            self.cache[key] = str(key)
+
 
     def get(self, key):
-        pass
+        if key in self.lru:
+            return self.cache[key]
+        else:
+            return None
 
     def get_cache(self):
-        pass
+        l = []
+        for key in reversed(self.lru):
+            l.append (key + "=" + self.cache[key])
+        return l
