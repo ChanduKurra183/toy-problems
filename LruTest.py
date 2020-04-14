@@ -1,4 +1,4 @@
-import LRU
+import LRU_Cache
 
 class LruTest:
     def testcases(self):
