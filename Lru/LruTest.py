@@ -1,15 +1,15 @@
-import LRU_Cache
+from LRU_Cache import LRU_Cache
 
 class LruTest:
     def testcases(self):
 
-        a = lru(2)
+        a = LRU_Cache(2)
         a.put("social_media")
-        assert a.get("social_media") == "1"
+        assert a.get("social_media") == "social_media","Testcase  failed"
         print("Testcase passed..!")
 
         a.put("browser")
-        assert a.get("browser") == "2"
+        assert a.get("browser") == "browser","Testcase  failed"
         print("Testcase passed..!!")
         print("<< All testcases passed >>")
 
@@ -17,6 +17,6 @@ class LruTest:
         for i in lis:
             print(i)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     a = LruTest()
     a.testcases()

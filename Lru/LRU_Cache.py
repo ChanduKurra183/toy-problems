@@ -1,8 +1,8 @@
 class LRU_Cache:
-    def init (self, size):
+    def __init__ (self, size):
         self.size = size
-        cache = {}
-        lru = []
+        self.cache = {}
+        self.lru = []
 
     def put(self, key):
         if (len(self.lru) < self.size):
